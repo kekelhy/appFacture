@@ -39,7 +39,7 @@ const config: Config = {
         "primary-container": "#312e81",
         "outline": "#777682",
         "on-secondary-fixed": "#002113",
-        primary: "#1a146b",
+        primary: "#4F46E5",
         "surface-container-low": "#eff4ff",
         "on-error": "#ffffff",
         "surface-container": "#e5eeff",

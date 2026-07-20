@@ -86,32 +86,32 @@ export default function LandingPricing() {
             <div
               key={idx}
               className={cn(
-                "rounded-3xl p-6 shadow-md border flex flex-col justify-between h-[380px] transition-all duration-350 relative",
+                "rounded-3xl p-6 flex flex-col justify-between h-[380px] transition-all duration-350 relative bg-white dark:bg-slate-900 border",
                 plan.popular
-                  ? "bg-indigo-600 text-white border-indigo-750 md:scale-105 shadow-xl md:z-10"
-                  : "bg-white dark:bg-slate-900 border-slate-200/80 dark:border-slate-800"
+                  ? "border-2 border-indigo-600 shadow-xl shadow-indigo-100/40 dark:shadow-none md:scale-105 md:z-10"
+                  : "border-slate-200/60 dark:border-slate-800"
               )}
             >
               {/* Popular Badge */}
               {plan.popular && (
-                <div className="absolute top-0 right-0 bg-emerald-500 text-white text-[9px] font-bold px-3 py-1 rounded-bl-xl rounded-tr-3xl uppercase tracking-wider select-none">
+                <div className="absolute top-0 right-0 bg-indigo-600 text-white text-[9px] font-bold px-3 py-1 rounded-bl-xl rounded-tr-3xl uppercase tracking-wider select-none">
                   Populaire
                 </div>
               )}
 
               <div className="space-y-4">
                 <div>
-                  <h3 className={cn("text-base font-extrabold", plan.popular ? "text-white" : "text-slate-900 dark:text-white")}>
+                  <h3 className="text-base font-extrabold text-slate-900 dark:text-white">
                     {plan.name}
                   </h3>
-                  <p className={cn("text-[10px] mt-0.5", plan.popular ? "text-indigo-200" : "text-slate-450 dark:text-slate-500")}>
+                  <p className="text-[10px] mt-0.5 text-slate-450 dark:text-slate-500">
                     {plan.description}
                   </p>
                 </div>
 
-                <div className={cn("text-2xl font-black font-mono", plan.popular ? "text-white" : "text-slate-900 dark:text-white")}>
+                <div className="text-2xl font-black font-mono text-slate-900 dark:text-white">
                   {plan.price === 0 ? "0" : formatFCFA(plan.price).replace(" FCFA", "")}{" "}
-                  <span className={cn("text-xs font-medium", plan.popular ? "text-indigo-200" : "text-slate-450 dark:text-slate-500")}>
+                  <span className="text-xs font-medium text-slate-450 dark:text-slate-500">
                     FCFA / {plan.period}
                   </span>
                 </div>
@@ -123,10 +123,10 @@ export default function LandingPricing() {
                       <CheckCircle
                         className={cn(
                           "h-4 w-4 shrink-0",
-                          plan.popular ? "text-emerald-350" : "text-emerald-500"
+                          plan.popular ? "text-indigo-600" : "text-emerald-500"
                         )}
                       />
-                      <span className={plan.popular ? "text-indigo-100" : "text-slate-650 dark:text-slate-300"}>
+                      <span className="text-slate-650 dark:text-slate-300">
                         {feat.text}
                       </span>
                     </li>
@@ -139,9 +139,9 @@ export default function LandingPricing() {
                 <Link
                   href={plan.ctaLink}
                   className={cn(
-                    "block w-full text-center py-2.5 rounded-xl text-xs font-bold transition-colors outline-none",
+                    "block w-full text-center py-2.5 rounded-xl text-xs font-bold transition-all outline-none",
                     plan.popular
-                      ? "bg-white text-indigo-650 hover:bg-slate-50 shadow-md"
+                      ? "bg-indigo-600 text-white hover:bg-indigo-700 shadow-md shadow-indigo-150"
                       : "border border-indigo-600 text-indigo-600 hover:bg-indigo-50/40"
                   )}
                 >

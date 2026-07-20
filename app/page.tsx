@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect } from "react";
+import { useAppStore } from "@/lib/store";
 import LandingHeader from "@/components/features/landing/header";
 import LandingHero from "@/components/features/landing/hero";
 import LandingFeatures from "@/components/features/landing/features";
@@ -10,7 +11,22 @@ import LandingFooter from "@/components/features/landing/footer";
 import "./landing.css";
 
 export default function Home() {
+  const user = useAppStore((state) => state.user);
+  const signOut = useAppStore((state) => state.signOut);
+
   useEffect(() => {
+    // Force light theme on the landing page to keep it bright and clean
+    const root = window.document.documentElement;
+    const isDark = root.classList.contains("dark");
+    if (isDark) {
+      root.classList.remove("dark");
+    }
+
+    // Automatically sign out on landing page load so CTA clicks always prompt for login
+    if (user) {
+      signOut().catch(() => {});
+    }
+
     // Scroll reveal observer
     const reveals = document.querySelectorAll(".reveal");
 
@@ -54,16 +70,22 @@ export default function Home() {
     });
 
     return () => {
+      // Restore dark mode when leaving the landing page if theme state is dark
+      const currentTheme = useAppStore.getState().theme;
+      if (currentTheme === "dark") {
+        root.classList.add("dark");
+      }
+
       revealObserver.disconnect();
       magneticBtns.forEach((btn) => {
         btn.removeEventListener("mousemove", handleMouseMove);
         btn.removeEventListener("mouseleave", handleMouseLeave);
       });
     };
-  }, []);
+  }, [user, signOut]);
 
   return (
-    <div className="min-h-screen bg-slate-50 dark:bg-slate-950 font-body-md antialiased text-slate-800 dark:text-slate-200">
+    <div className="min-h-screen bg-slate-50 font-body-md antialiased text-slate-800">
       <LandingHeader />
       <main>
         <LandingHero />

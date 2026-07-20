@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { CheckCircle } from "lucide-react";
+import { CheckCircle, ChevronRight } from "lucide-react";
 import { formatFCFA } from "@/lib/calculations/money";
 import { cn } from "@/lib/utils";
 
@@ -26,7 +26,7 @@ const PRICING_PLANS: PricingPlan[] = [
     price: 0,
     period: "mois",
     description: "Pour démarrer sereinement",
-    ctaText: "Commencer gratuitement",
+    ctaText: "Commencer",
     ctaLink: "/dashboard",
     features: [
       { text: "Jusqu'à 5 factures / mois" },
@@ -40,7 +40,7 @@ const PRICING_PLANS: PricingPlan[] = [
     popular: true,
     period: "mois",
     description: "Pour les indépendants actifs",
-    ctaText: "Choisir l'offre Pro",
+    ctaText: "Choisir Pro",
     ctaLink: "/dashboard",
     features: [
       { text: "Factures illimitées" },
@@ -54,13 +54,13 @@ const PRICING_PLANS: PricingPlan[] = [
     price: 15000,
     period: "mois",
     description: "Pour les petites équipes",
-    ctaText: "Choisir l'offre Business",
+    ctaText: "Contacter les ventes",
     ctaLink: "/dashboard",
     features: [
       { text: "Tout de l'offre Pro" },
       { text: "Accès multi-utilisateurs (3)" },
       { text: "Export comptable avancé" },
-      { text: "Support prioritaire 24/7" }
+      { text: "Support prioritaire" }
     ]
   }
 ];
@@ -86,47 +86,47 @@ export default function LandingPricing() {
             <div
               key={idx}
               className={cn(
-                "rounded-3xl p-6 flex flex-col justify-between h-[380px] transition-all duration-350 relative bg-white dark:bg-slate-900 border",
+                "rounded-3xl p-8 flex flex-col justify-between h-[420px] transition-all duration-350 relative border shadow-sm",
                 plan.popular
-                  ? "border-2 border-indigo-600 shadow-xl shadow-indigo-100/40 dark:shadow-none md:scale-105 md:z-10"
-                  : "border-slate-200/60 dark:border-slate-800"
+                  ? "bg-gradient-to-b from-slate-950 to-indigo-950 text-white border-slate-900 md:scale-105 shadow-xl md:z-10"
+                  : "bg-white dark:bg-slate-900 border-slate-200/80 dark:border-slate-800"
               )}
             >
               {/* Popular Badge */}
               {plan.popular && (
-                <div className="absolute top-0 right-0 bg-indigo-600 text-white text-[9px] font-bold px-3 py-1 rounded-bl-xl rounded-tr-3xl uppercase tracking-wider select-none">
-                  Populaire
+                <div className="absolute top-0 right-1/2 translate-x-1/2 -translate-y-1/2 bg-emerald-500 text-white text-[9px] font-extrabold px-3 py-1 rounded-full uppercase tracking-wider select-none shadow-sm">
+                  Le plus populaire
                 </div>
               )}
 
-              <div className="space-y-4">
+              <div className="space-y-6">
                 <div>
-                  <h3 className="text-base font-extrabold text-slate-900 dark:text-white">
+                  <h3 className={cn("text-lg font-bold", plan.popular ? "text-white" : "text-slate-900 dark:text-white")}>
                     {plan.name}
                   </h3>
-                  <p className="text-[10px] mt-0.5 text-slate-450 dark:text-slate-500">
+                  <p className={cn("text-xs mt-1", plan.popular ? "text-slate-400" : "text-slate-400 dark:text-slate-500")}>
                     {plan.description}
                   </p>
                 </div>
 
-                <div className="text-2xl font-black font-mono text-slate-900 dark:text-white">
+                <div className={cn("text-3xl font-black font-mono tracking-tight", plan.popular ? "text-white" : "text-slate-900 dark:text-white")}>
                   {plan.price === 0 ? "0" : formatFCFA(plan.price).replace(" FCFA", "")}{" "}
-                  <span className="text-xs font-medium text-slate-450 dark:text-slate-500">
-                    FCFA / {plan.period}
+                  <span className={cn("text-xs font-semibold", plan.popular ? "text-slate-400" : "text-slate-450 dark:text-slate-500")}>
+                    FCFA/mois
                   </span>
                 </div>
 
                 {/* Features List */}
-                <ul className="space-y-2.5 pt-2">
+                <ul className="space-y-3 pt-2">
                   {plan.features.map((feat, fIdx) => (
-                    <li key={fIdx} className="flex items-center gap-2 text-xs">
+                    <li key={fIdx} className="flex items-center gap-3 text-xs">
                       <CheckCircle
                         className={cn(
                           "h-4 w-4 shrink-0",
-                          plan.popular ? "text-indigo-600" : "text-emerald-500"
+                          plan.popular ? "text-emerald-450" : "text-indigo-650"
                         )}
                       />
-                      <span className="text-slate-650 dark:text-slate-300">
+                      <span className={plan.popular ? "text-slate-300" : "text-slate-650 dark:text-slate-300"}>
                         {feat.text}
                       </span>
                     </li>
@@ -135,18 +135,23 @@ export default function LandingPricing() {
               </div>
 
               {/* Action Button */}
-              <div className="pt-4">
-                <Link
-                  href={plan.ctaLink}
-                  className={cn(
-                    "block w-full text-center py-2.5 rounded-xl text-xs font-bold transition-all outline-none",
-                    plan.popular
-                      ? "bg-indigo-600 text-white hover:bg-indigo-700 shadow-md shadow-indigo-150"
-                      : "border border-indigo-600 text-indigo-600 hover:bg-indigo-50/40"
-                  )}
-                >
-                  {plan.ctaText}
-                </Link>
+              <div className="pt-6">
+                {plan.popular ? (
+                  <Link
+                    href={plan.ctaLink}
+                    className="block w-full text-center py-3 rounded-full text-xs font-bold bg-white text-slate-950 hover:bg-slate-50 hover:scale-101 transition-all outline-none shadow-md"
+                  >
+                    {plan.ctaText}
+                  </Link>
+                ) : (
+                  <Link
+                    href={plan.ctaLink}
+                    className="flex justify-between items-center w-full px-6 py-3 border border-slate-200/80 dark:border-slate-700 hover:bg-slate-50/50 rounded-full text-xs font-bold text-slate-800 dark:text-slate-200 transition-all outline-none"
+                  >
+                    <span>{plan.ctaText}</span>
+                    <ChevronRight className="h-4 w-4 text-slate-400" />
+                  </Link>
+                )}
               </div>
             </div>
           ))}

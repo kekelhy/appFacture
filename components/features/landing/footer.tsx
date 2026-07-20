@@ -1,29 +1,28 @@
 "use client";
 
 import Link from "next/link";
-import { FileText, Mail, Globe, ArrowRight } from "lucide-react";
+import { FileText, Mail, Globe } from "lucide-react";
 
 export default function LandingFooter() {
   return (
     <footer className="w-full bg-slate-50 dark:bg-slate-950 border-t border-slate-200/50 dark:border-slate-800/50">
       
       {/* Call to action section inside footer area */}
-      <section className="py-20 bg-gradient-to-br from-indigo-50/50 via-slate-50/50 to-white dark:from-slate-950/20 dark:via-slate-950/50 dark:to-slate-950 text-center relative overflow-hidden border-y border-slate-200/50 dark:border-slate-800/50">
-        <div className="absolute inset-0 bg-indigo-500/[0.02] pointer-events-none bg-grid-pattern" />
+      <section className="py-20 bg-gradient-to-r from-slate-950 via-indigo-950 to-slate-950 text-white text-center relative overflow-hidden border-y border-slate-900">
+        <div className="absolute inset-0 bg-indigo-500/[0.03] pointer-events-none bg-grid-pattern" />
         <div className="container mx-auto px-6 max-w-4xl relative z-10 space-y-6">
-          <h2 className="text-3xl sm:text-4xl font-black tracking-tight text-slate-900 dark:text-white">
+          <h2 className="text-3xl sm:text-4xl font-black tracking-tight text-white">
             Prêt à simplifier votre facturation ?
           </h2>
-          <p className="text-sm sm:text-base text-slate-500 dark:text-slate-400 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-sm sm:text-base text-slate-350 max-w-2xl mx-auto leading-relaxed">
             Rejoignez la nouvelle génération d&apos;entrepreneurs africains qui gagnent du temps chaque jour avec appFacture.
           </p>
           <div className="pt-4">
             <Link
               href="/dashboard"
-              className="cta-primary inline-flex items-center justify-center gap-2 rounded-full bg-indigo-600 text-white px-8 py-4 text-sm font-bold shadow-lg shadow-indigo-100 hover:bg-indigo-700 transition-all dark:shadow-none"
+              className="cta-primary inline-flex items-center justify-center gap-2 rounded-full bg-white text-slate-950 px-8 py-4 text-sm font-bold shadow-xl hover:bg-slate-50 transition-all"
             >
-              Créer mon compte gratuit
-              <ArrowRight className="h-4.5 w-4.5 text-white" />
+              Créer un compte gratuit
             </Link>
           </div>
         </div>

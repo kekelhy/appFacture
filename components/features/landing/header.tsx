@@ -39,14 +39,17 @@ export default function LandingHeader() {
 
         {/* Desktop Navigation Links */}
         <nav className="hidden md:flex items-center gap-8">
-          <a href="#features" className="text-sm font-semibold text-slate-600 dark:text-slate-300 hover:text-indigo-650 dark:hover:text-indigo-400 transition-colors">
+          <a href="#features" className="text-xs font-semibold text-slate-600 hover:text-indigo-600 transition-colors">
             Fonctionnalités
           </a>
-          <a href="#pricing" className="text-sm font-semibold text-slate-600 dark:text-slate-300 hover:text-indigo-650 dark:hover:text-indigo-400 transition-colors">
+          <a href="#pricing" className="text-xs font-semibold text-slate-600 hover:text-indigo-600 transition-colors">
             Tarifs
           </a>
-          <a href="#testimonials" className="text-sm font-semibold text-slate-600 dark:text-slate-300 hover:text-indigo-650 dark:hover:text-indigo-400 transition-colors">
-            Témoignages
+          <a href="#blog" className="text-xs font-semibold text-slate-600 hover:text-indigo-600 transition-colors">
+            Blog
+          </a>
+          <a href="#resources" className="text-xs font-semibold text-slate-600 hover:text-indigo-600 transition-colors">
+            Ressources
           </a>
         </nav>
 
@@ -94,11 +97,18 @@ export default function LandingHeader() {
               Tarifs
             </a>
             <a
-              href="#testimonials"
+              href="#blog"
               onClick={() => setMobileMenuOpen(false)}
               className="text-sm font-semibold text-slate-600 dark:text-slate-300 hover:text-indigo-650"
             >
-              Témoignages
+              Blog
+            </a>
+            <a
+              href="#resources"
+              onClick={() => setMobileMenuOpen(false)}
+              className="text-sm font-semibold text-slate-600 dark:text-slate-300 hover:text-indigo-650"
+            >
+              Ressources
             </a>
             <div className="h-px bg-slate-100 dark:bg-slate-800 my-2" />
             <Link

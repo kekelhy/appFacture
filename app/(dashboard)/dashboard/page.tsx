@@ -106,6 +106,7 @@ export default function DashboardPage() {
   const [mounted, setMounted] = useState(false);
   const invoices = useAppStore((state) => state.invoices);
   const clients = useAppStore((state) => state.clients);
+  const user = useAppStore((state) => state.user);
   const updateInvoiceStatus = useAppStore((state) => state.updateInvoiceStatus);
   const [activeMenuId, setActiveMenuId] = useState<string | null>(null);
 
@@ -113,8 +114,28 @@ export default function DashboardPage() {
     setMounted(true);
   }, []);
 
-  // Déterminer la date courante pour la dérive "en retard"
-  const TODAY_STR = "2026-07-12";
+  // Déterminer la date courante formatée YYYY-MM-DD
+  const getTodayStr = () => {
+    const d = new Date();
+    const year = d.getFullYear();
+    const month = String(d.getMonth() + 1).padStart(2, "0");
+    const day = String(d.getDate()).padStart(2, "0");
+    return `${year}-${month}-${day}`;
+  };
+
+  const TODAY_STR = mounted ? getTodayStr() : "2026-07-12";
+
+  // Formater la date du jour en Français
+  const getTodayFrenchDate = () => {
+    const today = new Date();
+    const dateFormatted = new Intl.DateTimeFormat("fr-FR", {
+      weekday: "long",
+      day: "numeric",
+      month: "long",
+      year: "numeric"
+    }).format(today);
+    return dateFormatted.charAt(0).toUpperCase() + dateFormatted.slice(1);
+  };
 
   // Calcul dynamique des statuts dérivés (notamment en retard)
   const getInvoiceStatus = (invoice: Invoice): "draft" | "sent" | "paid" | "overdue" => {
@@ -161,7 +182,7 @@ export default function DashboardPage() {
     ];
     
     const last6Months: { month: string; yearNum: number; monthNum: number; facturé: number; payé: number }[] = [];
-    const referenceDate = new Date(2026, 6, 12); // Base date: Sunday, July 12, 2026
+    const referenceDate = new Date();
     
     for (let i = 5; i >= 0; i--) {
       const d = new Date(referenceDate.getFullYear(), referenceDate.getMonth() - i, 1);
@@ -219,12 +240,16 @@ export default function DashboardPage() {
       <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
         <div>
           <h2 className="text-xl font-bold tracking-tight text-slate-900 sm:text-2xl">
-            Bonjour, Kekeli 👋
+            Bonjour, {mounted && user?.name ? user.name.trim().split(/\s+/)[0] : "Kekeli"} 👋
           </h2>
-          <p className="text-sm text-slate-500 mt-1 flex items-center gap-1.5">
-            <Calendar className="h-4 w-4" />
-            Nous sommes le dimanche 12 juillet 2026
-          </p>
+          {mounted ? (
+            <p className="text-sm text-slate-500 mt-1 flex items-center gap-1.5">
+              <Calendar className="h-4 w-4" />
+              Nous sommes le {getTodayFrenchDate()}
+            </p>
+          ) : (
+            <div className="h-5 w-48 mt-1 rounded bg-slate-150 animate-pulse" />
+          )}
         </div>
         <Link
           href="/invoices/new"

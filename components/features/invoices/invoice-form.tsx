@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 import {
@@ -33,6 +33,12 @@ export default function InvoiceForm({ initialInvoice }: InvoiceFormProps) {
 
   // Responsive Show Preview State (inspired by "Show Preview" switch in Creatinf)
   const [showPreview, setShowPreview] = useState(true);
+
+  useEffect(() => {
+    if (typeof window !== "undefined" && window.innerWidth < 1024) {
+      setShowPreview(false);
+    }
+  }, []);
 
   // Form Fields State
   const [clientId, setClientId] = useState(initialInvoice?.clientId || "");
@@ -184,7 +190,7 @@ export default function InvoiceForm({ initialInvoice }: InvoiceFormProps) {
         <div
           className={cn(
             "space-y-6 lg:transition-all lg:duration-300",
-            showPreview ? "lg:col-span-7" : "lg:col-span-12"
+            showPreview ? "hidden lg:block lg:col-span-7" : "block lg:col-span-12"
           )}
         >
           {/* Main Form Fields Container */}
@@ -461,7 +467,7 @@ export default function InvoiceForm({ initialInvoice }: InvoiceFormProps) {
 
         {/* Right Side: Live Preview Panel */}
         {showPreview && (
-          <div className="lg:col-span-5 w-full space-y-4 sticky top-20">
+          <div className="lg:col-span-5 w-full space-y-4 sticky top-20 animate-in fade-in slide-in-from-bottom duration-200">
             <div className="rounded-xl border border-slate-200/60 bg-white p-4 shadow-xs">
               <div className="text-xs font-semibold text-slate-400 mb-3 flex items-center gap-1.5 pb-2 border-b border-slate-100">
                 <Eye className="h-4 w-4 text-indigo-500" />

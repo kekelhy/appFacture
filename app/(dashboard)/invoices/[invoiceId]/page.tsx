@@ -160,7 +160,7 @@ export default function InvoiceDetailPage({ params }: { params: { invoiceId: str
         {/* Left: Complete Invoice Layout Sheet */}
         <div className="lg:col-span-8 w-full bg-white border border-slate-200/60 p-6 sm:p-10 shadow-xs rounded-xl">
           {/* Invoice Render Page */}
-          <div className="space-y-8 text-xs text-slate-650 max-w-[21cm] mx-auto">
+          <div className="space-y-8 text-xs text-slate-600 max-w-[21cm] mx-auto">
             {/* Header info */}
             <div className="flex justify-between items-start gap-4">
               <div className="flex items-center gap-2.5">
@@ -170,8 +170,8 @@ export default function InvoiceDetailPage({ params }: { params: { invoiceId: str
                 )}
                 <div>
                   <div className="font-extrabold text-[15px] text-indigo-600">{settings.companyName}</div>
-                  <div className="text-slate-450 mt-0.5">{settings.companyAddress}</div>
-                  <div className="text-slate-450">{settings.companyEmail} | {settings.companyPhone}</div>
+                  <div className="text-slate-400 mt-0.5">{settings.companyAddress}</div>
+                  <div className="text-slate-400">{settings.companyEmail} | {settings.companyPhone}</div>
                 </div>
               </div>
               <div className="text-right">
@@ -189,9 +189,9 @@ export default function InvoiceDetailPage({ params }: { params: { invoiceId: str
                 {client ? (
                   <div className="mt-2 space-y-1">
                     <div className="font-bold text-slate-800 text-[12px]">{client.name}</div>
-                    <div className="text-slate-450">{client.email}</div>
-                    <div className="text-slate-450">{client.phone}</div>
-                    <div className="text-slate-450 mt-1 whitespace-pre-line">{client.address}</div>
+                    <div className="text-slate-400">{client.email}</div>
+                    <div className="text-slate-400">{client.phone}</div>
+                    <div className="text-slate-400 mt-1 whitespace-pre-line">{client.address}</div>
                   </div>
                 ) : (
                   <div className="mt-2 text-slate-400 italic">Client introuvable</div>
@@ -202,7 +202,7 @@ export default function InvoiceDetailPage({ params }: { params: { invoiceId: str
                 <div className="font-bold text-slate-400 uppercase tracking-wider text-[9px]">Détails temporels :</div>
                 <div className="mt-2 space-y-1.5 text-slate-600 font-semibold">
                   <div>Émise le : <span className="font-bold text-slate-700">{formatDateDisplay(invoice.issueDate)}</span></div>
-                  <div>Échéance : <span className="font-bold text-slate-750">{formatDateDisplay(invoice.dueDate)}</span></div>
+                  <div>Échéance : <span className="font-bold text-slate-700">{formatDateDisplay(invoice.dueDate)}</span></div>
                 </div>
               </div>
             </div>
@@ -228,7 +228,7 @@ export default function InvoiceDetailPage({ params }: { params: { invoiceId: str
                         </td>
                         <td className="py-3 text-center">{it.quantity}</td>
                         <td className="py-3 text-right font-mono">{formatFCFA(it.unitPrice).replace(" FCFA", "")}</td>
-                        <td className="py-3 text-right font-mono font-bold text-slate-805">{formatFCFA(itemTotal).replace(" FCFA", "")}</td>
+                        <td className="py-3 text-right font-mono font-bold text-slate-800">{formatFCFA(itemTotal).replace(" FCFA", "")}</td>
                       </tr>
                     );
                   })}
@@ -237,15 +237,15 @@ export default function InvoiceDetailPage({ params }: { params: { invoiceId: str
             </div>
 
             {/* Summary Block */}
-            <div className="border-t border-slate-150 pt-4 flex justify-end">
+            <div className="border-t border-slate-200 pt-4 flex justify-end">
               <div className="w-60 space-y-1.5 text-right">
                 <div className="flex justify-between text-slate-500 font-semibold">
                   <span>Sous-total:</span>
-                  <span className="font-bold text-slate-750 font-mono">{formatFCFA(invoice.subtotal)}</span>
+                  <span className="font-bold text-slate-700 font-mono">{formatFCFA(invoice.subtotal)}</span>
                 </div>
                 <div className="flex justify-between text-slate-500 font-semibold">
                   <span>TVA (18%):</span>
-                  <span className="font-bold text-slate-750 font-mono">{formatFCFA(invoice.vatAmount)}</span>
+                  <span className="font-bold text-slate-700 font-mono">{formatFCFA(invoice.vatAmount)}</span>
                 </div>
                 <div className="h-px bg-slate-100 my-1" />
                 <div className="flex justify-between text-slate-800 font-extrabold text-[13px] pt-1">

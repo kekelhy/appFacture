@@ -25,7 +25,7 @@ export default function LandingHero() {
           </h1>
 
           {/* Subtitle */}
-          <p className="text-base sm:text-lg text-slate-650 dark:text-slate-400 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-base sm:text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto leading-relaxed">
             La solution de facturation la plus simple pour les entrepreneurs africains. Créez des factures professionnelles, suivez vos paiements et gérez votre budget en un clin d&apos;œil.
           </p>
 

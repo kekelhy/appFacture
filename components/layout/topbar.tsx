@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { usePathname } from "next/navigation";
 import { Menu, Bell, ChevronDown } from "lucide-react";
 import { useAppStore } from "@/lib/store";
@@ -18,6 +18,17 @@ export default function Topbar({ onOpenSidebar }: TopbarProps) {
 
   const [isAuthModalOpen, setIsAuthModalOpen] = useState(false);
   const [showLogoutMenu, setShowLogoutMenu] = useState(false);
+  const menuRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (menuRef.current && !menuRef.current.contains(event.target as Node)) {
+        setShowLogoutMenu(false);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
 
   // Déterminer le titre de la section courante
   const getSectionTitle = () => {
@@ -63,27 +74,24 @@ export default function Topbar({ onOpenSidebar }: TopbarProps) {
         <div className="h-4 w-px bg-slate-200" />
         
         {/* User Info */}
-        <div className="relative">
+        <div ref={menuRef} className="relative">
           {showLogoutMenu && user && (
-            <>
-              <div onClick={() => setShowLogoutMenu(false)} className="fixed inset-0 z-10" />
-              <div className="absolute right-0 mt-2 w-48 rounded-xl border border-slate-200/80 bg-white p-1.5 shadow-lg z-20">
-                <button
-                  onClick={async () => {
-                    setShowLogoutMenu(false);
-                    try {
-                      await signOut();
-                      toast.success("Déconnexion réussie !");
-                    } catch (err: any) {
-                      toast.error("Erreur lors de la déconnexion.");
-                    }
-                  }}
-                  className="flex w-full items-center gap-2 rounded-lg px-2.5 py-2 text-left text-xs font-semibold text-rose-600 hover:bg-rose-50 transition-colors"
-                >
-                  Se déconnecter
-                </button>
-              </div>
-            </>
+            <div className="absolute right-0 mt-2 w-48 rounded-xl border border-slate-200/80 bg-white p-1.5 shadow-lg z-20">
+              <button
+                onClick={async () => {
+                  setShowLogoutMenu(false);
+                  try {
+                    await signOut();
+                    toast.success("Déconnexion réussie !");
+                  } catch (err: any) {
+                    toast.error("Erreur lors de la déconnexion.");
+                  }
+                }}
+                className="flex w-full items-center gap-2 rounded-lg px-2.5 py-2 text-left text-xs font-semibold text-rose-600 hover:bg-rose-50 transition-colors"
+              >
+                Se déconnecter
+              </button>
+            </div>
           )}
 
           <button

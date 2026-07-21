@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import {
@@ -64,6 +64,17 @@ export default function Sidebar({ isOpen, onClose }: SidebarProps) {
   const [isAuthModalOpen, setIsAuthModalOpen] = useState(false);
   const [isSearchModalOpen, setIsSearchModalOpen] = useState(false);
   const [showLogoutMenu, setShowLogoutMenu] = useState(false);
+  const menuRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (menuRef.current && !menuRef.current.contains(event.target as Node)) {
+        setShowLogoutMenu(false);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
 
   useEffect(() => {
     listenToAuthChanges();
@@ -259,27 +270,24 @@ export default function Sidebar({ isOpen, onClose }: SidebarProps) {
         </div>
 
         {/* Organization / Profile Section */}
-        <div className="relative mt-4">
+        <div ref={menuRef} className="relative mt-4">
           {showLogoutMenu && user && (
-            <>
-              <div onClick={() => setShowLogoutMenu(false)} className="fixed inset-0 z-10" />
-              <div className="absolute bottom-full left-0 mb-2 w-full rounded-xl border border-slate-200/80 bg-white p-1.5 shadow-lg z-20">
-                <button
-                  onClick={async () => {
-                    setShowLogoutMenu(false);
-                    try {
-                      await signOut();
-                      toast.success("Déconnexion réussie !");
-                    } catch (err: any) {
-                      toast.error("Erreur lors de la déconnexion.");
-                    }
-                  }}
-                  className="flex w-full items-center gap-2 rounded-lg px-2.5 py-2 text-xs font-semibold text-rose-600 hover:bg-rose-50 transition-colors"
-                >
-                  Se déconnecter
-                </button>
-              </div>
-            </>
+            <div className="absolute bottom-full left-0 mb-2 w-full rounded-xl border border-slate-200/80 bg-white p-1.5 shadow-lg z-20">
+              <button
+                onClick={async () => {
+                  setShowLogoutMenu(false);
+                  try {
+                    await signOut();
+                    toast.success("Déconnexion réussie !");
+                  } catch (err: any) {
+                    toast.error("Erreur lors de la déconnexion.");
+                  }
+                }}
+                className="flex w-full items-center gap-2 rounded-lg px-2.5 py-2 text-xs font-semibold text-rose-600 hover:bg-rose-50 transition-colors"
+              >
+                Se déconnecter
+              </button>
+            </div>
           )}
 
           <button

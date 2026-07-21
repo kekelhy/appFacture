@@ -29,19 +29,19 @@ export default function LandingFooter() {
       </section>
 
       {/* Main Footer Links Block */}
-      <div className="py-16 max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-12 font-medium text-xs text-slate-650 dark:text-slate-400">
+      <div className="py-16 max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-12 font-medium text-xs text-slate-600">
         
         {/* Brand/Copyright info */}
         <div className="space-y-4">
-          <Link href="#" className="flex items-center gap-2 text-primary dark:text-white block hover:opacity-90 transition-opacity">
+          <Link href="#" className="flex items-center gap-2 text-indigo-600 block hover:opacity-90 transition-opacity">
             <div className="flex h-7 w-7 items-center justify-center rounded-lg bg-indigo-600 shadow-sm">
               <FileText className="h-4 w-4 text-white" />
             </div>
-            <span className="text-base font-bold text-slate-800 dark:text-white font-headline-lg">
+            <span className="text-base font-bold text-slate-800 font-headline-lg">
               appFacture
             </span>
           </Link>
-          <p className="text-[10px] text-slate-450 dark:text-slate-500 leading-normal">
+          <p className="text-[10px] text-slate-450 leading-normal">
             © 2026 appFacture. Fait avec fierté en Afrique.<br />
             Tous droits réservés.
           </p>
@@ -57,48 +57,48 @@ export default function LandingFooter() {
 
         {/* Product links */}
         <div className="space-y-3">
-          <h4 className="text-xs font-bold text-slate-800 dark:text-white uppercase tracking-wider">Produit</h4>
+          <h4 className="text-xs font-bold text-slate-800 uppercase tracking-wider">Produit</h4>
           <ul className="space-y-2">
             <li>
-              <a href="#features" className="hover:text-indigo-650 transition-colors">Fonctionnalités</a>
+              <a href="#features" className="hover:text-indigo-600 transition-colors">Fonctionnalités</a>
             </li>
             <li>
-              <a href="#pricing" className="hover:text-indigo-650 transition-colors">Tarifs</a>
+              <a href="#pricing" className="hover:text-indigo-600 transition-colors">Tarifs</a>
             </li>
             <li>
-              <a href="#" className="hover:text-indigo-650 transition-colors">Mises à jour</a>
+              <a href="#" className="hover:text-indigo-600 transition-colors">Mises à jour</a>
             </li>
           </ul>
         </div>
 
         {/* Resources links */}
         <div className="space-y-3">
-          <h4 className="text-xs font-bold text-slate-800 dark:text-white uppercase tracking-wider">Ressources</h4>
+          <h4 className="text-xs font-bold text-slate-800 uppercase tracking-wider">Ressources</h4>
           <ul className="space-y-2">
             <li>
-              <a href="#" className="hover:text-indigo-650 transition-colors">Blog</a>
+              <a href="#" className="hover:text-indigo-600 transition-colors">Blog</a>
             </li>
             <li>
-              <a href="#" className="hover:text-indigo-650 transition-colors">Guides d&apos;entrepreneuriat</a>
+              <a href="#" className="hover:text-indigo-600 transition-colors">Guides d&apos;entrepreneuriat</a>
             </li>
             <li>
-              <a href="#" className="hover:text-indigo-650 transition-colors">Modèles de factures</a>
+              <a href="#" className="hover:text-indigo-600 transition-colors">Modèles de factures</a>
             </li>
           </ul>
         </div>
 
         {/* Legal & Support links */}
         <div className="space-y-3">
-          <h4 className="text-xs font-bold text-slate-800 dark:text-white uppercase tracking-wider">Légal & Support</h4>
+          <h4 className="text-xs font-bold text-slate-800 uppercase tracking-wider">Légal & Support</h4>
           <ul className="space-y-2">
             <li>
-              <a href="#" className="hover:text-indigo-650 transition-colors">Conditions d&apos;utilisation</a>
+              <a href="#" className="hover:text-indigo-600 transition-colors">Conditions d&apos;utilisation</a>
             </li>
             <li>
-              <a href="#" className="hover:text-indigo-650 transition-colors">Politique de confidentialité</a>
+              <a href="#" className="hover:text-indigo-600 transition-colors">Politique de confidentialité</a>
             </li>
             <li>
-              <a href="#" className="hover:text-indigo-650 transition-colors">Support Technique</a>
+              <a href="#" className="hover:text-indigo-600 transition-colors">Support Technique</a>
             </li>
           </ul>
         </div>

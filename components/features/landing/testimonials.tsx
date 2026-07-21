@@ -44,7 +44,7 @@ export default function LandingTestimonials() {
           <h2 className="text-2xl sm:text-3xl font-black text-slate-900 dark:text-white tracking-tight">
             Ils nous font confiance
           </h2>
-          <p className="text-sm sm:text-base text-slate-550 dark:text-slate-400">
+          <p className="text-sm sm:text-base text-slate-600 dark:text-slate-400">
             Rejoignez des milliers d&apos;entrepreneurs africains qui ont simplifié leur gestion.
           </p>
         </div>
@@ -64,7 +64,7 @@ export default function LandingTestimonials() {
                   ))}
                 </div>
                 {/* Text quote */}
-                <p className="text-xs text-slate-650 dark:text-slate-350 italic leading-relaxed mb-6">
+                <p className="text-xs text-slate-600 dark:text-slate-350 italic leading-relaxed mb-6">
                   &quot;{testi.text}&quot;
                 </p>
               </div>

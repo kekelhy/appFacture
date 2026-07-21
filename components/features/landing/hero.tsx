@@ -11,7 +11,7 @@ export default function LandingHero() {
       <div className="container mx-auto px-6 max-w-7xl relative z-10 text-center reveal active">
         <div className="max-w-4xl mx-auto space-y-6">
           {/* New Analytics Tag */}
-          <span className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-indigo-50 border border-indigo-150 text-indigo-750 text-xs font-bold shadow-xs animate-pulse-soft">
+          <span className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-indigo-50 border border-indigo-200 text-indigo-700 text-xs font-bold shadow-xs animate-pulse-soft">
             <Bolt className="h-4 w-4 text-indigo-600 fill-indigo-100" />
             Nouveau : Analyse de Trésorerie & Budgets
           </span>
@@ -19,13 +19,13 @@ export default function LandingHero() {
           {/* Heading */}
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-black text-slate-900 dark:text-white tracking-tight leading-tight">
             Fini les factures sur Word et Excel.<br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-indigo-750">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-indigo-800">
               Passez à la vitesse supérieure.
             </span>
           </h1>
 
           {/* Subtitle */}
-          <p className="text-base sm:text-lg text-slate-550 dark:text-slate-400 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-base sm:text-lg text-slate-650 dark:text-slate-400 max-w-2xl mx-auto leading-relaxed">
             La solution de facturation la plus simple pour les entrepreneurs africains. Créez des factures professionnelles, suivez vos paiements et gérez votre budget en un clin d&apos;œil.
           </p>
 
@@ -33,7 +33,7 @@ export default function LandingHero() {
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
             <Link
               href="/dashboard"
-              className="cta-primary w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-full bg-indigo-600 px-8 py-4 text-sm font-bold text-white shadow-lg hover:bg-indigo-750 transition-all"
+              className="cta-primary w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-full bg-indigo-600 px-8 py-4 text-sm font-bold text-white shadow-lg hover:bg-indigo-700 transition-all"
             >
               Créer ma première facture
               <ArrowRight className="h-4.5 w-4.5" />
@@ -50,7 +50,7 @@ export default function LandingHero() {
           <div className="rounded-2xl border border-slate-200/80 dark:border-slate-800 bg-white dark:bg-slate-900 p-2 shadow-2xl overflow-hidden">
             <div className="rounded-xl border border-slate-100 dark:border-slate-800 bg-slate-50 dark:bg-slate-950 p-1 overflow-hidden">
               <img
-                src="/original-6b6e909edfae9952aeee9ade31429b0c.webp"
+                src="/app-mockup.png"
                 alt="Tableau de bord de appFacture"
                 className="w-full h-auto rounded-lg object-cover shadow-sm"
               />
@@ -58,13 +58,13 @@ export default function LandingHero() {
           </div>
 
           {/* Floating animated icons */}
-          <div className="absolute -top-6 -left-6 bg-white dark:bg-slate-900 border border-slate-250/50 dark:border-slate-800 p-3 rounded-2xl shadow-lg animate-float-1 hidden sm:block">
-            <FileText className="h-6 w-6 text-indigo-650" />
+          <div className="absolute -top-6 -left-6 bg-white dark:bg-slate-900 border border-slate-200/50 dark:border-slate-800 p-3 rounded-2xl shadow-lg animate-float-1 hidden sm:block">
+            <FileText className="h-6 w-6 text-indigo-600" />
           </div>
-          <div className="absolute -bottom-6 -right-6 bg-white dark:bg-slate-900 border border-slate-250/50 dark:border-slate-800 p-3 rounded-2xl shadow-lg animate-float-2 hidden sm:block">
+          <div className="absolute -bottom-6 -right-6 bg-white dark:bg-slate-900 border border-slate-200/50 dark:border-slate-800 p-3 rounded-2xl shadow-lg animate-float-2 hidden sm:block">
             <Smartphone className="h-6 w-6 text-sky-500" />
           </div>
-          <div className="absolute top-1/2 -right-10 bg-white dark:bg-slate-900 border border-slate-250/50 dark:border-slate-800 p-3 rounded-2xl shadow-lg animate-float-3 hidden sm:block">
+          <div className="absolute top-1/2 -right-10 bg-white dark:bg-slate-900 border border-slate-200/50 dark:border-slate-800 p-3 rounded-2xl shadow-lg animate-float-3 hidden sm:block">
             <TrendingUp className="h-6 w-6 text-emerald-600" />
           </div>
         </div>

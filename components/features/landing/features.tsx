@@ -14,7 +14,7 @@ export default function LandingFeatures() {
             <h2 className="text-2xl sm:text-3xl font-black text-slate-900 dark:text-white tracking-tight">
               Pourquoi changer vos habitudes ?
             </h2>
-            <p className="text-sm sm:text-base text-slate-550 dark:text-slate-400">
+            <p className="text-sm sm:text-base text-slate-600 dark:text-slate-400">
               Les méthodes traditionnelles vous font perdre du temps et de l&apos;argent. appFacture résout vos problèmes quotidiens.
             </p>
           </div>
@@ -28,7 +28,7 @@ export default function LandingFeatures() {
               <h3 className="text-base font-bold text-slate-900 dark:text-white mb-2">
                 Manque de professionnalisme
               </h3>
-              <p className="text-xs text-slate-550 dark:text-slate-400 leading-relaxed">
+              <p className="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
                 Des factures mal formatées donnent une mauvaise image à vos clients et retardent souvent les paiements.
               </p>
             </div>
@@ -41,7 +41,7 @@ export default function LandingFeatures() {
               <h3 className="text-base font-bold text-slate-900 dark:text-white mb-2">
                 Calculs manuels complexes
               </h3>
-              <p className="text-xs text-slate-550 dark:text-slate-400 leading-relaxed">
+              <p className="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
                 Gérer la TVA à 18% ou les retenues à la source manuellement entraîne souvent des erreurs de calcul coûteuses.
               </p>
             </div>
@@ -54,7 +54,7 @@ export default function LandingFeatures() {
               <h3 className="text-base font-bold text-slate-900 dark:text-white mb-2">
                 Suivi des paiements chaotique
               </h3>
-              <p className="text-xs text-slate-550 dark:text-slate-400 leading-relaxed">
+              <p className="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
                 Oublier de relancer un client ou ne pas savoir qui vous doit quoi affecte directement la trésorerie de votre entreprise.
               </p>
             </div>
@@ -70,7 +70,7 @@ export default function LandingFeatures() {
               <h2 className="text-2xl sm:text-3xl font-black text-slate-900 dark:text-white tracking-tight">
                 Tout ce dont vous avez besoin pour gérer vos finances
               </h2>
-              <p className="text-sm sm:text-base text-slate-550 dark:text-slate-400">
+              <p className="text-sm sm:text-base text-slate-600 dark:text-slate-400">
                 Une suite d&apos;outils conçue spécifiquement pour les réalités des entrepreneurs en Afrique.
               </p>
             </div>
@@ -129,16 +129,16 @@ export default function LandingFeatures() {
             {/* Invoice 1: Paid */}
             <div className="bg-white dark:bg-slate-900 p-4 rounded-xl border border-slate-100 dark:border-slate-800 flex justify-between items-center shadow-xs">
               <div className="flex gap-3 items-center">
-                <div className="w-8 h-8 bg-indigo-50 dark:bg-indigo-950/35 rounded-full flex items-center justify-center text-indigo-650 font-bold text-xs">
+                <div className="w-8 h-8 bg-indigo-50 dark:bg-indigo-950/35 rounded-full flex items-center justify-center text-indigo-600 font-bold text-xs">
                   A
                 </div>
                 <div>
-                  <div className="h-3.5 bg-slate-150 dark:bg-slate-800 rounded w-20 mb-1.5" />
+                  <div className="h-3.5 bg-slate-200 dark:bg-slate-800 rounded w-20 mb-1.5" />
                   <div className="h-2.5 bg-slate-100 dark:bg-slate-850 rounded w-12" />
                 </div>
               </div>
               <div className="text-right space-y-1">
-                <div className="text-xs font-extrabold text-emerald-650 font-mono">{formatFCFA(500000)}</div>
+                <div className="text-xs font-extrabold text-emerald-600 font-mono">{formatFCFA(500000)}</div>
                 <div className="text-[9px] font-bold text-emerald-700 bg-emerald-50 border border-emerald-100 px-2 py-0.5 rounded-full inline-block">Payée</div>
               </div>
             </div>
@@ -146,11 +146,11 @@ export default function LandingFeatures() {
             {/* Invoice 2: Overdue */}
             <div className="bg-white dark:bg-slate-900 p-4 rounded-xl border border-slate-100 dark:border-slate-800 flex justify-between items-center shadow-xs">
               <div className="flex gap-3 items-center">
-                <div className="w-8 h-8 bg-indigo-50 dark:bg-indigo-950/35 rounded-full flex items-center justify-center text-indigo-650 font-bold text-xs">
+                <div className="w-8 h-8 bg-indigo-50 dark:bg-indigo-950/35 rounded-full flex items-center justify-center text-indigo-600 font-bold text-xs">
                   B
                 </div>
                 <div>
-                  <div className="h-3.5 bg-slate-150 dark:bg-slate-800 rounded w-24 mb-1.5" />
+                  <div className="h-3.5 bg-slate-200 dark:bg-slate-800 rounded w-24 mb-1.5" />
                   <div className="h-2.5 bg-slate-100 dark:bg-slate-850 rounded w-16" />
                 </div>
               </div>
@@ -163,11 +163,11 @@ export default function LandingFeatures() {
             {/* Invoice 3: Draft */}
             <div className="bg-white dark:bg-slate-900 p-4 rounded-xl border border-slate-100 dark:border-slate-800 flex justify-between items-center opacity-60 shadow-xs">
               <div className="flex gap-3 items-center">
-                <div className="w-8 h-8 bg-indigo-50 dark:bg-indigo-950/35 rounded-full flex items-center justify-center text-indigo-650 font-bold text-xs">
+                <div className="w-8 h-8 bg-indigo-50 dark:bg-indigo-950/35 rounded-full flex items-center justify-center text-indigo-600 font-bold text-xs">
                   C
                 </div>
                 <div>
-                  <div className="h-3.5 bg-slate-150 dark:bg-slate-800 rounded w-16 mb-1.5" />
+                  <div className="h-3.5 bg-slate-200 dark:bg-slate-800 rounded w-16 mb-1.5" />
                   <div className="h-2.5 bg-slate-100 dark:bg-slate-850 rounded w-10" />
                 </div>
               </div>

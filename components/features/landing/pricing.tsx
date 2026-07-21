@@ -75,7 +75,7 @@ export default function LandingPricing() {
           <h2 className="text-2xl sm:text-3xl font-black text-slate-900 dark:text-white tracking-tight">
             Des tarifs transparents, sans surprise
           </h2>
-          <p className="text-sm sm:text-base text-slate-550 dark:text-slate-400">
+          <p className="text-sm sm:text-base text-slate-600 dark:text-slate-400">
             Choisissez le plan qui correspond à la taille de votre activité.
           </p>
         </div>
@@ -123,10 +123,10 @@ export default function LandingPricing() {
                       <CheckCircle
                         className={cn(
                           "h-4 w-4 shrink-0",
-                          plan.popular ? "text-emerald-450" : "text-indigo-650"
+                          plan.popular ? "text-emerald-400" : "text-indigo-600"
                         )}
                       />
-                      <span className={plan.popular ? "text-slate-300" : "text-slate-650 dark:text-slate-300"}>
+                      <span className={plan.popular ? "text-slate-300" : "text-slate-600 dark:text-slate-300"}>
                         {feat.text}
                       </span>
                     </li>

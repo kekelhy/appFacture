@@ -15,7 +15,7 @@ export default function LandingFooter() {
             Prêt à simplifier votre facturation ?
           </h2>
           <p className="text-sm sm:text-base text-slate-350 max-w-2xl mx-auto leading-relaxed">
-            Rejoignez la nouvelle génération d&apos;entrepreneurs africains qui gagnent du temps chaque jour avec appFacture.
+            Rejoignez la nouvelle génération d&apos;entrepreneurs africains qui gagnent du temps chaque jour avec proFacture.
           </p>
           <div className="pt-4">
             <Link
@@ -38,18 +38,18 @@ export default function LandingFooter() {
               <FileText className="h-4 w-4 text-white" />
             </div>
             <span className="text-base font-bold text-slate-800 font-headline-lg">
-              appFacture
+              proFacture
             </span>
           </Link>
           <p className="text-[10px] text-slate-450 leading-normal">
-            © 2026 appFacture. Fait avec fierté en Afrique.<br />
+            © 2026 proFacture. Fait avec fierté en Afrique.<br />
             Tous droits réservés.
           </p>
           <div className="flex gap-3 pt-2">
             <a href="#" className="text-slate-400 hover:text-indigo-600 transition-colors" title="Site Web">
               <Globe className="h-4 w-4" />
             </a>
-            <a href="mailto:contact@appfacture.com" className="text-slate-400 hover:text-indigo-600 transition-colors" title="Contact Email">
+            <a href="mailto:contact@profacture.com" className="text-slate-400 hover:text-indigo-600 transition-colors" title="Contact Email">
               <Mail className="h-4 w-4" />
             </a>
           </div>

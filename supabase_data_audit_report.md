@@ -1,6 +1,6 @@
-# Rapport d'Audit de Données — appFacture Full-Stack Supabase
+# Rapport d'Audit de Données — proFacture Full-Stack Supabase
 
-Cet audit a été réalisé pour garantir que l'application **appFacture** n'utilise aucun jeu de données fictives (mocks) ou de cache local temporaire (`localStorage`) pour ses opérations. L'objectif est de certifier que l'ensemble des modules lit, enregistre, et modifie exclusivement de **vraies données** stockées en base de données relationnelle **Supabase PostgreSQL**.
+Cet audit a été réalisé pour garantir que l'application **proFacture** n'utilise aucun jeu de données fictives (mocks) ou de cache local temporaire (`localStorage`) pour ses opérations. L'objectif est de certifier que l'ensemble des modules lit, enregistre, et modifie exclusivement de **vraies données** stockées en base de données relationnelle **Supabase PostgreSQL**.
 
 ---
 
@@ -48,4 +48,4 @@ Cet audit a été réalisé pour garantir que l'application **appFacture** n'uti
 
 ## 3. Conclusion de l'Audit
 
-L'application **appFacture** est désormais **100% full-stack** et **conforme au traitement de données réelles**. Elle ne dépend plus de mocks locaux. Toutes les lectures, créations, modifications et suppressions sont exécutées sur votre base de données Supabase PostgreSQL.
+L'application **proFacture** est désormais **100% full-stack** et **conforme au traitement de données réelles**. Elle ne dépend plus de mocks locaux. Toutes les lectures, créations, modifications et suppressions sont exécutées sur votre base de données Supabase PostgreSQL.

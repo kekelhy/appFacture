@@ -115,7 +115,7 @@ export default function Sidebar({ isOpen, onClose }: SidebarProps) {
               <FileText className="h-5 w-5 text-white" />
             </div>
             <span className="text-xl font-bold tracking-tight text-slate-900">
-              appFacture
+              proFacture
             </span>
           </Link>
           <button

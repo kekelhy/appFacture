@@ -19,7 +19,7 @@ interface FAQItem {
 const FAQS: FAQItem[] = [
   {
     id: 1,
-    question: "Comment fonctionne le calcul de la TVA à 18% sur appFacture ?",
+    question: "Comment fonctionne le calcul de la TVA à 18% sur proFacture ?",
     answer: "Conformément aux règles de l'UEMOA pour les entrepreneurs, la TVA de 18% est calculée globalement sur le sous-total brut cumulé de vos prestations. Chaque ligne d'article est calculée et arrondie individuellement à l'entier le plus proche (le FCFA n'ayant pas de centimes), puis la TVA de 18% est appliquée une seule fois sur le sous-total arrondi pour éviter tout écart de centime."
   },
   {
@@ -30,7 +30,7 @@ const FAQS: FAQItem[] = [
   {
     id: 3,
     question: "Comment enregistrer un règlement ou changer le statut d'une facture ?",
-    answer: "Le suivi des paiements s'effectue manuellement dans appFacture. Dans la liste des factures, cliquez sur les trois points (...) d'une facture et choisissez 'Marquer payée'. Vous pouvez également ouvrir le détail d'une facture et utiliser le dropdown de statut rapide pour passer de Brouillon à Envoyée ou Payée. Les indicateurs financiers de votre Dashboard se synchroniseront instantanément."
+    answer: "Le suivi des paiements s'effectue manuellement dans proFacture. Dans la liste des factures, cliquez sur les trois points (...) d'une facture et choisissez 'Marquer payée'. Vous pouvez également ouvrir le détail d'une facture et utiliser le dropdown de statut rapide pour passer de Brouillon à Envoyée ou Payée. Les indicateurs financiers de votre Dashboard se synchroniseront instantanément."
   },
   {
     id: 4,

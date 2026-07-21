@@ -187,7 +187,7 @@ export default function AuthModal({ isOpen, onClose }: AuthModalProps) {
 
           {/* Helper links */}
           <p className="text-[11px] text-center text-slate-400 mt-4 leading-normal">
-            En continuant, vous acceptez les conditions d&apos;utilisation de l&apos;application appFacture.
+            En continuant, vous acceptez les conditions d&apos;utilisation de l&apos;application proFacture.
           </p>
         </form>
       </div>

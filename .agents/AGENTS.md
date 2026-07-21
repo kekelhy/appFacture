@@ -1,6 +1,6 @@
-# Règles du Design System — appFacture
+# Règles du Design System — proFacture
 
-Ce document définit les directives de design, d'intégration Tailwind CSS, d'alignement et de responsivité de l'application **appFacture** à suivre de manière stricte pour toute nouvelle page ou tout nouveau composant créé.
+Ce document définit les directives de design, d'intégration Tailwind CSS, d'alignement et de responsivité de l'application **proFacture** à suivre de manière stricte pour toute nouvelle page ou tout nouveau composant créé.
 
 ---
 

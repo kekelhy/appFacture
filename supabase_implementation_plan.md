@@ -1,4 +1,4 @@
-# Plan d'implémentation — Migration Full-Stack vers Supabase (appFacture)
+# Plan d'implémentation — Migration Full-Stack vers Supabase (proFacture)
 
 Ce plan décrit les étapes pour migrer la couche de données locale (Zustand + `localStorage`) vers un véritable backend PostgreSQL hébergé sur **Supabase**, rendant l'application entièrement full-stack et collaborative.
 

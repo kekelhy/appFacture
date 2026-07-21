@@ -67,7 +67,7 @@ export default function FullscreenAuth() {
             <FileText className="h-6 w-6 text-white" />
           </div>
           <h2 className="text-xl font-bold tracking-tight text-slate-900 dark:text-slate-100">
-            Bienvenue sur appFacture
+            Bienvenue sur proFacture
           </h2>
           <p className="text-xs text-slate-500 dark:text-slate-400 max-w-xs">
             Veuillez vous connecter ou créer un compte pour accéder à votre espace de facturation.
@@ -224,7 +224,7 @@ export default function FullscreenAuth() {
 
           {/* Helper links */}
           <p className="text-[11px] text-center text-slate-400 mt-4 leading-normal">
-            En continuant, vous acceptez les conditions d&apos;utilisation de l&apos;application appFacture.
+            En continuant, vous acceptez les conditions d&apos;utilisation de l&apos;application proFacture.
           </p>
         </form>
       </div>

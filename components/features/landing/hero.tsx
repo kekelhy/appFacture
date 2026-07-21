@@ -51,7 +51,7 @@ export default function LandingHero() {
             <div className="rounded-xl border border-slate-100 dark:border-slate-800 bg-slate-50 dark:bg-slate-950 p-1 overflow-hidden">
               <img
                 src="/app-mockup.png"
-                alt="Tableau de bord de appFacture"
+                alt="Tableau de bord de proFacture"
                 className="w-full h-auto rounded-lg object-cover shadow-sm"
               />
             </div>

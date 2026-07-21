@@ -15,7 +15,7 @@ export default function LandingFeatures() {
               Pourquoi changer vos habitudes ?
             </h2>
             <p className="text-sm sm:text-base text-slate-600 dark:text-slate-400">
-              Les méthodes traditionnelles vous font perdre du temps et de l&apos;argent. appFacture résout vos problèmes quotidiens.
+              Les méthodes traditionnelles vous font perdre du temps et de l&apos;argent. proFacture résout vos problèmes quotidiens.
             </p>
           </div>
 

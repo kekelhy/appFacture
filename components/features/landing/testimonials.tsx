@@ -14,7 +14,7 @@ const TESTIMONIALS: TestimonialItem[] = [
   {
     name: "Amadou Diallo",
     role: "Consultant IT, Dakar",
-    text: "Avant appFacture, je passais mes weekends à faire mes factures sur Excel. Maintenant, ça me prend 5 minutes et le rendu est hyper pro.",
+    text: "Avant proFacture, je passais mes weekends à faire mes factures sur Excel. Maintenant, ça me prend 5 minutes et le rendu est hyper pro.",
     initials: "AD",
     color: "bg-indigo-600 text-white"
   },
@@ -28,7 +28,7 @@ const TESTIMONIALS: TestimonialItem[] = [
   {
     name: "Koffi Mensah",
     role: "Designer Freelance, Lomé",
-    text: "Mes clients me prennent beaucoup plus au sérieux depuis que j'utilise appFacture. Et les relances automatiques m'ont sauvé la mise plusieurs fois.",
+    text: "Mes clients me prennent beaucoup plus au sérieux depuis que j'utilise proFacture. Et les relances automatiques m'ont sauvé la mise plusieurs fois.",
     initials: "KM",
     color: "bg-slate-700 text-white"
   }

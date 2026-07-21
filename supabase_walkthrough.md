@@ -1,6 +1,6 @@
 # Walkthrough — Authentification Supabase, Nouvelles Pages & Recherche Globale
 
-Ce document résume le travail effectué pour enrichir l'application **appFacture** avec l'authentification des utilisateurs, trois modules de gestion financière, et la recherche globale.
+Ce document résume le travail effectué pour enrichir l'application **proFacture** avec l'authentification des utilisateurs, trois modules de gestion financière, et la recherche globale.
 
 ---
 

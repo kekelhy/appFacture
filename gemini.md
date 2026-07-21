@@ -1,11 +1,11 @@
-# Récapitulatif Technique & Fonctionnel — appFacture
+# Récapitulatif Technique & Fonctionnel — proFacture
 
-Ce document sert de guide de référence et de fiche de transfert pour l'application **appFacture**. Il résume le but du projet, les fonctionnalités implémentées, la structure du code, les choix de design, et fournit des directives pour tout futur modèle d'intelligence artificielle ou développeur travaillant sur cette base de code.
+Ce document sert de guide de référence et de fiche de transfert pour l'application **proFacture**. Il résume le but du projet, les fonctionnalités implémentées, la structure du code, les choix de design, et fournit des directives pour tout futur modèle d'intelligence artificielle ou développeur travaillant sur cette base de code.
 
 ---
 
 ## 1. Description du Projet
-**appFacture** est une application web SaaS de facturation premium spécialement conçue pour les entrepreneurs d'Afrique francophone (utilisant la devise **FCFA / XOF**, sans centimes). L'application propose une interface moderne, hautement responsive et interactive, permettant de piloter l'ensemble du cycle de vie des factures et clients en mode local autonome.
+**proFacture** est une application web SaaS de facturation premium spécialement conçue pour les entrepreneurs d'Afrique francophone (utilisant la devise **FCFA / XOF**, sans centimes). L'application propose une interface moderne, hautement responsive et interactive, permettant de piloter l'ensemble du cycle de vie des factures et clients en mode local autonome.
 
 ---
 
@@ -71,7 +71,7 @@ L'application repose sur un ensemble de technologies modernes et performantes :
 
 ## 4. Structure des Fichiers Clés
 ```text
-appFacture/
+proFacture/
 ├── .agents/
 │   └── AGENTS.md                 # Directives de design system (charte, espacements)
 ├── app/

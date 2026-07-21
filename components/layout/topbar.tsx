@@ -70,9 +70,9 @@ export default function Topbar({ onOpenSidebar }: TopbarProps) {
               <div className="absolute right-0 mt-2 w-48 rounded-xl border border-slate-200/80 bg-white p-1.5 shadow-lg z-20">
                 <button
                   onClick={async () => {
+                    setShowLogoutMenu(false);
                     try {
                       await signOut();
-                      setShowLogoutMenu(false);
                       toast.success("Déconnexion réussie !");
                     } catch (err: any) {
                       toast.error("Erreur lors de la déconnexion.");
@@ -97,10 +97,14 @@ export default function Topbar({ onOpenSidebar }: TopbarProps) {
             className="flex items-center gap-2 hover:bg-slate-50 p-1.5 rounded-xl transition-colors outline-none"
           >
             <div className="flex h-8 w-8 items-center justify-center rounded-xl bg-indigo-55 border border-indigo-100 text-indigo-650 font-bold text-xs">
-              {user ? user.email.substring(0, 2).toUpperCase() : "KC"}
+              {user 
+                ? (user.name 
+                    ? user.name.trim().split(/\s+/).map((n: string) => n[0]).join("").substring(0, 2).toUpperCase() 
+                    : user.email.substring(0, 2).toUpperCase()) 
+                : "KC"}
             </div>
             <span className="hidden sm:inline text-xs font-semibold text-slate-700 truncate max-w-[120px]">
-              {user ? user.email : "Kekeli C."}
+              {user ? (user.name || user.email) : "Kekeli C."}
             </span>
             {user && <ChevronDown className="h-3.5 w-3.5 text-slate-400" />}
           </button>

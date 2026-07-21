@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Mail, Lock, Loader2, FileText, Eye, EyeOff } from "lucide-react";
+import { Mail, Lock, Loader2, FileText, Eye, EyeOff, User } from "lucide-react";
 import { useAppStore } from "@/lib/store";
 import { toast } from "sonner";
 import { cn } from "@/lib/utils";
@@ -9,6 +9,7 @@ import { cn } from "@/lib/utils";
 export default function FullscreenAuth() {
   const [mode, setMode] = useState<"signin" | "signup">("signup");
   const [email, setEmail] = useState("");
+  const [name, setName] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [loading, setLoading] = useState(false);
@@ -25,6 +26,11 @@ export default function FullscreenAuth() {
       return;
     }
 
+    if (mode === "signup" && !name.trim()) {
+      toast.error("Veuillez renseigner votre nom.");
+      return;
+    }
+
     if (mode === "signup" && password !== confirmPassword) {
       toast.error("Les mots de passe ne correspondent pas.");
       return;
@@ -36,9 +42,10 @@ export default function FullscreenAuth() {
         await signIn(email, password);
         toast.success("Connexion réussie !");
       } else {
-        await signUp(email, password);
+        await signUp(email, password, name);
         toast.success("Inscription réussie ! Vous pouvez maintenant vous connecter.");
         setMode("signin");
+        setName("");
         setPassword("");
         setConfirmPassword("");
       }
@@ -96,6 +103,28 @@ export default function FullscreenAuth() {
               Créer un compte
             </button>
           </div>
+
+          {/* Nom complet (signup only) */}
+          {mode === "signup" && (
+            <div className="space-y-1.5 animate-in slide-in-from-top-2 duration-150">
+              <label className="text-[10px] font-bold text-slate-400 dark:text-slate-550 uppercase tracking-wider">
+                Nom complet
+              </label>
+              <div className="relative">
+                <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
+                  <User className="h-4.5 w-4.5 text-slate-400" />
+                </div>
+                <input
+                  type="text"
+                  required
+                  placeholder="Ex: Amadou Diallo"
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
+                  className="w-full rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-950/30 py-2.5 pl-10 pr-4 text-sm text-slate-700 dark:text-slate-200 focus:border-indigo-600 dark:focus:border-indigo-400 focus:bg-white dark:focus:bg-slate-950 outline-none transition-all"
+                />
+              </div>
+            </div>
+          )}
 
           {/* Email field */}
           <div className="space-y-1.5">

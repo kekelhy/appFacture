@@ -266,9 +266,9 @@ export default function Sidebar({ isOpen, onClose }: SidebarProps) {
               <div className="absolute bottom-full left-0 mb-2 w-full rounded-xl border border-slate-200/80 bg-white p-1.5 shadow-lg z-20">
                 <button
                   onClick={async () => {
+                    setShowLogoutMenu(false);
                     try {
                       await signOut();
-                      setShowLogoutMenu(false);
                       toast.success("Déconnexion réussie !");
                     } catch (err: any) {
                       toast.error("Erreur lors de la déconnexion.");
@@ -294,11 +294,15 @@ export default function Sidebar({ isOpen, onClose }: SidebarProps) {
           >
             <div className="flex items-center gap-3 text-left">
               <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-indigo-100 text-indigo-600 font-bold text-sm select-none">
-                {user ? user.email.substring(0, 2).toUpperCase() : "KC"}
+                {user 
+                  ? (user.name 
+                      ? user.name.trim().split(/\s+/).map((n: string) => n[0]).join("").substring(0, 2).toUpperCase() 
+                      : user.email.substring(0, 2).toUpperCase()) 
+                  : "KC"}
               </div>
               <div>
                 <p className="text-xs font-bold text-slate-800 leading-tight truncate max-w-[150px]">
-                  {user ? user.email : "Kekeli C."}
+                  {user ? (user.name || user.email) : "Kekeli C."}
                 </p>
                 <p className="text-[10px] text-slate-500">
                   {user ? "Administrateur" : "Se connecter (Invité)"}

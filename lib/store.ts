@@ -61,6 +61,7 @@ export interface Budget {
 export interface UserSession {
   id: string;
   email: string;
+  name: string;
 }
 
 interface AppState {
@@ -78,7 +79,7 @@ interface AppState {
   
   // Auth actions
   signIn: (email: string, password: string) => Promise<void>;
-  signUp: (email: string, password: string) => Promise<void>;
+  signUp: (email: string, password: string, name?: string) => Promise<void>;
   signOut: () => Promise<void>;
   listenToAuthChanges: () => void;
   
@@ -170,7 +171,8 @@ export const useAppStore = create<AppState>()(
             set({
               user: {
                 id: session.user.id,
-                email: session.user.email || ""
+                email: session.user.email || "",
+                name: session.user.user_metadata?.full_name || ""
               }
             });
           } else {
@@ -184,8 +186,16 @@ export const useAppStore = create<AppState>()(
         if (error) throw error;
       },
 
-      signUp: async (email, password) => {
-        const { error } = await supabase.auth.signUp({ email, password });
+      signUp: async (email, password, name) => {
+        const { error } = await supabase.auth.signUp({
+          email,
+          password,
+          options: {
+            data: {
+              full_name: name || ""
+            }
+          }
+        });
         if (error) throw error;
       },
 
@@ -204,7 +214,8 @@ export const useAppStore = create<AppState>()(
             set({
               user: {
                 id: session.user.id,
-                email: session.user.email || ""
+                email: session.user.email || "",
+                name: session.user.user_metadata?.full_name || ""
               }
             });
           }
